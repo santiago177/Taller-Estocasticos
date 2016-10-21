@@ -11,9 +11,9 @@ echo "nodes = $nodes" >> results.txt
 echo "trials = $trials"
 protocols=("OLSR" "AODV" "DSDV")
 mov=("Grid" "RandomDir" "RandomRect")
-for i in $(seq 0 3) 
+for i in $(seq 0 2) 
 do
-	for j in $(seq 0 3)
+	for j in $(seq 0 2)
 	do
 	    echo "${protocols[$i]} ${mov[$j]}" >> results.txt
 	    for k in $(seq 1 $trials) 
