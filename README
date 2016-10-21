@@ -1,4 +1,4 @@
 Copiar el archivo flat.cc en scratch y el archivo run_tests.sh en la carpeta
 donde esta el waf
-Ejecutar con sudo (si es necesario) el run_tests.sh con el comando: bash run_tests.sh [numero de nodos] [numero de pruebas]
-Los resultados quedan guardados en el archivo results.txt
+Ejecutar con sudo (si es necesario) el run_tests.sh con el comando: bash run_tests.sh [numero de nodos] [numero de pruebas] [archivo]
+Los resultados quedan guardados en el archivo que se haya pasado como argumento
