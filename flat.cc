@@ -146,6 +146,7 @@ int main (int argc, char *argv[])
 MobilityHelper mobility;
 	switch(mobilityModel) {
 		case 0:			
+		    std::cout<<"mov 0"<<std::endl;
 		 	mobility.SetPositionAllocator ("ns3::GridPositionAllocator", "MinX", DoubleValue (20.0),
 				                                                      "MinY", DoubleValue (20.0),
 				                                                      "DeltaX", DoubleValue (20.0),
@@ -163,6 +164,7 @@ MobilityHelper mobility;
 		  	mobility.Install (nodes);
 			break;
 		case 1:
+		    std::cout<<"mov 1"<<std::endl;
 			mobility.SetPositionAllocator ("ns3::RandomRectanglePositionAllocator",
                                     "X", StringValue ("ns3::UniformRandomVariable[Min=50.0|Max=120.0]"),
                                     "Y", StringValue ("ns3::UniformRandomVariable[Min=50.0|Max=120.0]"));
@@ -176,6 +178,7 @@ MobilityHelper mobility;
 			  mobility.Install (nodes);
 			break;
 		default:
+		    std::cout<<"mov 2"<<std::endl;
 			ObjectFactory position;
 
 			 position.SetTypeId ("ns3::RandomRectanglePositionAllocator");
@@ -208,18 +211,21 @@ MobilityHelper mobility;
 
   //Enable OLSR
    NS_LOG_INFO ("OLSR protocol");
-  OlsrHelper olsr;
+    OlsrHelper olsr;
 	AodvHelper aodv;
 	DsdvHelper dsdv;
 	switch(routing) {
 		case 0:
 			list.Add (olsr, 100);
+			std::cout<<"OLSR"<<std::endl;
 			break;
 		case 1:
-			list.Add(aodv, 100);	
+			list.Add(aodv, 100);
+    		std::cout<<"AODV"<<std::endl;	
 			break;
 		default:
 			list.Add(dsdv, 100);	
+			std::cout<<"DSDV"<<std::endl;
 			break;
 	}
   

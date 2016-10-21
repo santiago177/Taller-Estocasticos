@@ -25,7 +25,7 @@ do
 	        echo "rand = $rand"
 		    echo $rand
 		    str="$(./waf --run "flat --mobilityModel=$j --routing=$i --numNodes=$nodes --seed=$rand")"
-		    #echo $str		    
+		    echo $str		    
 		    ans=$(echo $str | grep -oE "(([0-9]+(\.[0-9]+)?|-nan)[ ]?){6}")
 		    echo $ans
 		    echo $ans >> $filename
